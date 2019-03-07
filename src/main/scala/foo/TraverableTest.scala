@@ -10,12 +10,20 @@ object TraverableTest {
     val list = List(List(1), List(2), List(3), List(Some(1), None, Some(4)))
     println(list.flatten)
     println(List(Some(1), None, Some(4)).flatten)
+    /*
+List(1, 2, 3, Some(1), None, Some(4))
+List(1, 4)
+     */
   }
 
   def test2(): Unit = {
     val list = List(List(1, 2, 3), List(4, 5, 6), List(7, 8, 9))
     println(list)
     println(list.transpose)
+    /*
+    List(List(1, 2, 3), List(4, 5, 6), List(7, 8, 9))
+List(List(1, 4, 7), List(2, 5, 8), List(3, 6, 9))
+     */
   }
 
   def test3(): Unit = {
@@ -28,7 +36,12 @@ object TraverableTest {
     val (a2, b2) = list2.unzip(s => (s(0), s.substring(2)))
     println(a2)
     println(b2)
-
+/*
+List(a, b, c)
+List(1, 2, 3)
+List(a, b, c)
+List(1, 2, 3)
+ */
   }
 
   def test4(): Unit = {
@@ -42,7 +55,29 @@ object TraverableTest {
     println(ids ++ names)
     // ++ 大量中间集合
     println(Traversable.concat(names, ids))
-
+/*
+(~,$tilde)
+(=,$eq)
+(<,$less)
+(>,$greater)
+(!,$bang)
+(#,$hash)
+(%,$percent)
+(^,$up)
+(&,$amp)
+(|,$bar)
+(*,$times)
+(/,$div)
+(+,$plus)
+(-,$minus)
+(:,$colon)
+(\,$bslash)
+(?,$qmark)
+(@,$at)
+List(A, b, C, 1, 2, 3)
+Set(1, A, 2, b, 3, C)
+List(A, b, C, 1, 2, 3)
+ */
   }
 
   def test5(): Unit = {
@@ -54,6 +89,10 @@ object TraverableTest {
       case x if x % 2 == 0 => x + "YES"
     }
     println(result)
+/*
+List(2, 4, 6, 8)
+List(2YES, 4YES, 6YES, 8YES)
+ */
   }
 
   def test6(): Unit = {
@@ -61,10 +100,11 @@ object TraverableTest {
     val res = t.scan(1)(_ * _)
     println(res)
     println(t.scanLeft(1)(_ * _))
+    // scanLeft 保留中间结果
     //List(1, 1, 2, 6, 24, 120)
     //List(1, 1, 2, 6, 24, 120)
     //120
-    // 只返回最后结果
+    // foldLeft 只返回最后的结果值
     println(t.foldLeft(1)(_ + _))
   }
 
@@ -91,7 +131,12 @@ object TraverableTest {
     println(t.span(_ % 2 != 0))
     println(t.partition(_ % 2 == 0))
     println(t.groupBy(_ % 3))
-
+/*
+(List(1, 2, 3, 4, 5),List(6, 7, 8, 9, 10))
+(List(1),List(2, 3, 4, 5, 6, 7, 8, 9, 10))
+(List(2, 4, 6, 8, 10),List(1, 3, 5, 7, 9))
+Map(2 -> List(2, 5, 8), 1 -> List(1, 4, 7, 10), 0 -> List(3, 6, 9))
+ */
   }
 
   def test10(): Unit = {
@@ -141,7 +186,10 @@ object TraverableTest {
     val arr2 = new Array[Int](t.size * 2)
     t.copyToArray(arr2, 0)
     println(arr2.mkString(","))
-
+/*
+1,2,3,4,5
+1,2,3,4,5,0,0,0,0,0
+ */
 
   }
 

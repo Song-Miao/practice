@@ -76,6 +76,12 @@ object SeqTest {
     val m = s.map(_ * 10)
     println(m)
     println(m eq s)
+    /*
+ArrayBuffer(10, 20, 30)
+true
+ArrayBuffer(100, 200, 300)
+false
+     */
   }
 
   def main(args: Array[String]): Unit = {
