@@ -1,0 +1,58 @@
+# Created by .ignore support plugin (hsz.mobi)
+/lib/ant/*.jar
+/lib/*.jar
+/test/files/codelib/*.jar
+/test/files/lib/*.jar
+/test/files/speclib/instrumented.jar
+/tools/*.jar
+
+# Developer specific Ant properties
+/build.properties
+/buildcharacter.properties
+
+# might get generated when testing Jenkins scripts locally
+/jenkins.properties
+
+# target directories for ant build
+/build
+/build/
+/dists/
+
+# other
+/out/
+/sandbox/
+/.ant-targets-build.xml
+
+# eclipse, intellij
+/.classpath
+/.project
+/src/intellij*/*.iml
+/src/intellij*/*.ipr
+/src/intellij*/*.iws
+**/.cache
+/.idea
+/.settings
+
+# Standard symbolic link to build/quick/bin
+/qbin
+
+# Sbt's target directories
+/target/
+/project/target/
+/project/project/target/
+/project/project/project/target/
+/build-sbt/
+
+
+##comm
+.history
+dist
+/*.iml
+/.idea_modules
+activator*
+RUNNING_PID
+.DS_Store
+*.log
+*.swp
+
+##java
